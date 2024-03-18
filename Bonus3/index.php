@@ -116,14 +116,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <tr>
 
                     <?php
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                        foreach ($hotelFiltered[0] as $key => $value) {
-                            echo "<th scope='col'>$key</th>";
-                        }
-                    } else {
-                        foreach ($hotels[0] as $key => $value) {
-                            echo "<th scope='col'>$key</th>";
-                        }
+                    foreach ($hotels[0] as $key => $value) {
+                        echo "<th scope='col'>$key</th>";
                     }
 
 
@@ -133,33 +127,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </thead>
             <tbody>
                 <?php
-                if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
 
-                    foreach ($hotelFiltered as $currentHotel) {
-                        echo
-                        "<tr>
+
+                foreach ($hotels as $currentHotel) {
+                    echo
+                    "<tr>
                         ";
-                        foreach ($currentHotel as $key => $value) {
-                            echo "<td>$value</td>";
-                        }
-
-
-                        "</tr>";
+                    foreach ($currentHotel as $key => $value) {
+                        echo "<td>$value</td>";
                     }
-                } else {
-
-                    foreach ($hotels as $currentHotel) {
-                        echo
-                        "<tr>
-                        ";
-                        foreach ($currentHotel as $key => $value) {
-                            echo "<td>$value</td>";
-                        }
 
 
-                        "</tr>";
-                    }
+                    "</tr>";
                 }
+
 
 
                 ?>
@@ -191,6 +172,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="submit">
 
         </form>
+
+
+        <table class="table mt-4">
+            <thead>
+                <tr>
+
+                    <?php
+                    foreach ($hotelFiltered[0] as $key => $value) {
+                        echo "<th scope='col'>$key</th>";
+                    }
+
+
+                    ?>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($hotelFiltered as $currentHotel) {
+                    echo
+                    "<tr>
+                    ";
+                    foreach ($currentHotel as $key => $value) {
+                        echo "<td>$value</td>";
+                    }
+
+
+
+                    "</tr>";
+                }
+
+
+                ?>
+
+
+            </tbody>
+        </table>
 
 
 
