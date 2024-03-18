@@ -63,7 +63,7 @@ $hotels = [
     <div class="container">
 
 
-        <h1>Hotel</h1>
+        <h1>Hotels</h1>
 
 
 
@@ -103,29 +103,36 @@ $hotels = [
             </tbody>
         </table>
 
+        <div class="row">
 
-        <form action="filters.php">
+            <div class="col-6">
 
-            <div class="form-check">
-                <input name="checkParking" class=" form-check-input" type="checkbox" value="true" id="checkParking">
-                <label class="form-check-label" for="checkParking">
-                    Con parcheggio
-                </label>
+                <form action="filters.php">
+
+                    <div class="form-check my-3">
+                        <input name="checkParking" class=" form-check-input" type="checkbox" value="true" id="checkParking">
+                        <label class="form-check-label" for="checkParking">
+                            Con parcheggio
+                        </label>
+                    </div>
+
+                    <select name="vote" class="form-select" aria-label="Default select example">
+                        <option selected>Seleziona voto minimo</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+
+                    </select>
+
+                    <input type="submit" class="btn btn-danger my-4">
+
+                </form>
+
             </div>
+        </div>
 
-            <select name="vote" class="form-select" aria-label="Default select example">
-                <option selected>Seleziona voto minimo</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-
-            </select>
-
-            <input type="submit">
-
-        </form>
 
 
 

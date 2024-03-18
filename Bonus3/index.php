@@ -149,29 +149,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </tbody>
         </table>
 
+        <div class="row">
+            <div class="col-6">
 
-        <form action="" method="post">
+                <form action="" method="post">
 
-            <div class="form-check">
-                <input name="checkParking" class=" form-check-input" type="checkbox" value="false" id="checkParking">
-                <label class="form-check-label" for="checkParking">
-                    Con parcheggio
-                </label>
+                    <div class="form-check my-3">
+                        <input name="checkParking" class=" form-check-input" type="checkbox" value="false" id="checkParking">
+                        <label class="form-check-label" for="checkParking">
+                            Con parcheggio
+                        </label>
+                    </div>
+
+                    <select name="vote" class="form-select" aria-label="Default select example">
+                        <option selected>Seleziona voto minimo</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+
+                    </select>
+
+                    <input type="submit" class="btn btn-danger my-4">
+
+                </form>
+
             </div>
+        </div>
 
-            <select name="vote" class="form-select" aria-label="Default select example">
-                <option selected>Seleziona voto minimo</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
 
-            </select>
-
-            <input type="submit">
-
-        </form>
 
 
         <table class="table mt-4">
