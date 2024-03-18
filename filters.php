@@ -41,6 +41,8 @@ $hotels = [
 ];
 
 $hotelsWithParking = [];
+$hotelWithVote = [];
+$hotelFiltered = [];
 
 if ($_GET["checkParking"] == true) {
 
@@ -54,7 +56,34 @@ if ($_GET["checkParking"] == true) {
     }
 } else (
     $hotelsWithParking = $hotels
-)
+);
+
+// var_dump($hotelsWithParking);
+
+if ($_GET["vote"] != "Seleziona voto minimo") {
+    foreach ($hotels as $currentHotel) {
+        $withVote = $currentHotel['vote'];
+        if ($withVote >= $_GET["vote"]) {
+            $hotelWithVote[] = $currentHotel;
+        }
+    };
+} else {
+    $hotelWithVote = $hotels;
+};
+
+
+// var_dump($hotelWithVote);
+
+foreach ($hotelsWithParking as $hotel) {
+    $hotelName = $hotel["name"];
+    foreach ($hotelWithVote as $hotel2) {
+        $hotelName2 = $hotel2["name"];
+        if ($hotelName == $hotelName2) {
+            $hotelFiltered[] = $hotel;
+        }
+    }
+}
+// var_dump($hotelFiltered);
 
 ?>
 
@@ -88,7 +117,7 @@ if ($_GET["checkParking"] == true) {
                 <tr>
 
                     <?php
-                    foreach ($hotelsWithParking[0] as $key => $value) {
+                    foreach ($hotelFiltered[0] as $key => $value) {
                         echo "<th scope='col'>$key</th>";
                     }
 
@@ -99,7 +128,7 @@ if ($_GET["checkParking"] == true) {
             </thead>
             <tbody>
                 <?php
-                foreach ($hotelsWithParking as $currentHotel) {
+                foreach ($hotelFiltered as $currentHotel) {
                     echo
                     "<tr>
                     ";

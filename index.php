@@ -113,17 +113,22 @@ $hotels = [
                 </label>
             </div>
 
+            <select name="vote" class="form-select" aria-label="Default select example">
+                <option selected>Seleziona voto minimo</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+
+            </select>
+
             <input type="submit">
 
         </form>
 
 
-        <!-- <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                Checked checkbox
-            </label>
-        </div> -->
+
 
     </div>
 
